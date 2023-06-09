@@ -1,10 +1,77 @@
 "use client"
+import { usePathname } from "next/navigation"
+import SearchSharpIcon from "@mui/icons-material/SearchSharp"
+import Link from "next/link"
+import { useState } from "react"
 import styles from "./navbar.module.css"
 
 export default function Navbar() {
+  const pathName = usePathname().split("/")[1]
+
+  const [isSearchVisible, setVisible] = useState(false)
+
   return (
-    <div className="text-center h-16 bg-black  flex items-center justify-center">
-      <h4 className={`font-bold text-white ${styles.text}`}>Navbar</h4>
+    <div className="text-center px-5 text-white h-16 bg-black bg-opacity-95  flex items-center justify-between bg-gradient-to-t from-slate-800 to-black">
+      {!isSearchVisible && (
+        <div className="logo">
+          <h1>
+            <span className="font-extrabold text-2xl pr-1">M</span>
+            ovieHub
+          </h1>
+        </div>
+      )}
+      <div className="nav-list flex ">
+        <li className="flex gap-x-5 justify-around items-center list-none">
+          <ul
+            className={`${
+              pathName === "" ? "text-cyan-300" : ""
+            } hover:text-cyan-500 cursor-pointer`}
+          >
+            <Link href={"/"}>Home</Link>
+          </ul>
+          <ul
+            className={`${
+              pathName === "shows" ? "text-cyan-300" : ""
+            } hover:text-cyan-500 cursor-pointer`}
+          >
+            <Link href={"/shows"}>Tv Shows</Link>
+          </ul>
+          <ul
+            className={`${
+              pathName === "movies" ? "text-cyan-300" : ""
+            } hover:text-cyan-500 cursor-pointer`}
+          >
+            Movies
+          </ul>
+          <ul
+            className={`${
+              pathName === "upcoming" ? "text-cyan-300" : ""
+            } hover:text-cyan-500 cursor-pointer`}
+          >
+            Upcoming
+          </ul>
+        </li>
+      </div>
+      <div className="btns flex items-center overflow-x-hidden">
+        {isSearchVisible && (
+          <div className={`${styles.box} z-10`}>
+            <input
+              type="text"
+              placeholder="Search"
+              className="p-1 pl-2 border-none outline-none mr-2 rounded-full text-cyan-800 focus:outline-cyan-400 border-none"
+            />
+          </div>
+        )}
+
+        <button
+          onClick={() => {
+            setVisible(!isSearchVisible)
+          }}
+          className="rounded-full z-50 bg-cyan-800 hover:bg-gradient-radial from-cyan-800 to-cyan-500 transition p-2"
+        >
+          <SearchSharpIcon />
+        </button>
+      </div>
     </div>
   )
 }
