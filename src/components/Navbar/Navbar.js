@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isSearchVisible, setVisible] = useState(false)
 
   return (
-    <div className="text-center px-5 text-white h-16 bg-black bg-opacity-95  flex items-center justify-between bg-gradient-to-t from-slate-800 to-black">
+    <div className="absolute top-0 right-0 left-0 z-50 text-center px-5 text-white h-16 bg-black bg-opacity-95  flex items-center justify-between bg-gradient-to-t from-slate-800 to-black opacity-90">
       {!isSearchVisible && (
         <div className="logo">
           <h1>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search"
-              className="p-1 pl-2 border-none outline-none mr-2 rounded-full text-cyan-800 focus:outline-cyan-400 border-none"
+              className="p-1 pl-2 outline-none mr-2 rounded-full text-cyan-800 focus:outline-cyan-400 border-none"
             />
           </div>
         )}
