@@ -17,7 +17,7 @@ function Hero() {
           objectFit: "cover",
         }}
       />
-      <div className="hero z-40 text-white mt-32 pl-0 md:pl-10">
+      <div className="hero z-40 text-white mt-28 pl-0 md:pl-10">
         <h1 className="font-mono font-extrabold text-6xl">Treading Now</h1>
         <div className="text-box sm:w-3/4 mt-5 md:w-1/2">
           <p className="leading-4 ">

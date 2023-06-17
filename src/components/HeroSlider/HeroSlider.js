@@ -35,10 +35,7 @@ export default function HeroSlider() {
   ]
 
   return (
-    <div
-      className="slider h-auto mx-2 absolute bottom-2 left-0 right-0 flex flex-row items-center overflow-x-scroll z-40"
-      style={{ overflowY: "visible" }}
-    >
+    <div className="slider grid-flow-row gap-2 h-2/5 mx-2 justify-items-center absolute bottom-2 left-0 right-0 z-40 p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  sm:grid-cols-3 ">
       {items.map((item) => (
         <Card item={item} key={item.id} />
       ))}
