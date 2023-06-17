@@ -11,11 +11,11 @@ export default function Navbar() {
   const [isSearchVisible, setVisible] = useState(false)
 
   return (
-    <div className="absolute top-0 right-0 left-0 z-50 text-center px-5 text-white h-16 bg-black bg-opacity-95  flex items-center justify-between bg-gradient-to-t from-slate-800 to-black opacity-90">
+    <div className="absolute top-0 right-0 left-0 z-50 text-center px-5 text-white  bg-black bg-opacity-95 py-3 flex items-center justify-between bg-gradient-to-t from-slate-800 to-black opacity-90 flex-col gap-y-2 md:flex-row gap-0">
       {!isSearchVisible && (
-        <div className="logo">
+        <div className="logo hidden md:flex">
           <h1>
-            <span className="font-extrabold text-2xl pr-1">M</span>
+            <span className=" font-extrabold text-2xl pr-1">M</span>
             ovieHub
           </h1>
         </div>
